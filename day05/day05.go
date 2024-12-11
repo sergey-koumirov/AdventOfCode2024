@@ -18,6 +18,7 @@ type Updates []Update
 func main() {
 	fmt.Println("Day 05:")
 	part1()
+	fmt.Println()
 	part2()
 }
 
@@ -32,7 +33,6 @@ func part1() {
 	}
 
 	fmt.Println("Part1:", sum)
-	fmt.Println()
 }
 
 func part2() {
@@ -42,8 +42,6 @@ func part2() {
 	for _, update := range updates {
 		if !updateIsCorrect(update, rules) {
 			fixed := fixUpdate(update, rules)
-
-			fmt.Println(fixed)
 			sum += fixed[len(fixed)/2]
 		}
 	}
